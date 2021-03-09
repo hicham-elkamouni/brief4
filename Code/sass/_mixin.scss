@@ -1,0 +1,107 @@
+@import "./colors";
+
+/********** Input Styling Website **********/
+
+@mixin input {
+  width: 100%;
+  border: 2px solid $white;
+  border-radius: 10px;
+  outline: none;
+  height: 50px;
+  padding: 10px;
+  transition: 0.3s ease-in-out;
+
+  &:focus::placeholder {
+    color: transparent;
+  }
+
+  &:focus {
+    border: 2px solid $green;
+  }
+}
+
+/********** End of Input Styling Website **********/
+
+/********** Button Styling Website **********/
+
+@mixin button {
+  align-self: center;
+  height: 50px;
+  outline: none;
+  border: none;
+  border-radius: 40px;
+  background-color: $white;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+  font-size: 25px;
+  color: $green;
+
+  &:hover {
+    color: $white;
+    background-color: $green;
+  }
+}
+
+/********** End of Button Styling Website **********/
+
+/********** Contact Us & About Us Header Styling Website **********/
+
+@mixin page-background {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+
+  .page-title {
+    margin: 80px 250px;
+
+    span {
+      font-size: 30px;
+      font-weight: 500;
+      color: $green;
+    }
+
+    h3 {
+      font-size: 60px;
+      font-weight: bold;
+      color: $white;
+    }
+  }
+}
+
+/********** End of Contact Us & About Us Header Styling Website **********/
+
+/********** Student & Admin Profile Background Styling Website **********/
+
+@mixin profile-bg {
+  background-color: $dark_blue;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/********** Student & Admin Profile Background Styling Website **********/
+
+@media (max-width: 800px) {
+  /********** Input Styling Responsive **********/
+  input {
+    height: 40px !important;
+  }
+
+  /********** End of Input Styling Responsive **********/
+
+  /********** Button Styling Responsive **********/
+
+  button {
+    height: 40px !important;
+    font-size: 20px !important;
+  }
+
+  /********** End of Button Styling Responsive **********/
+}

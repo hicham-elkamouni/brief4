@@ -1,0 +1,66 @@
+@import "./colors";
+@import "./mixin";
+
+/********** Login Page Web **********/
+
+.login-background {
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.8)
+    ),
+    url(images/login-background.jpg);
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login-box {
+    width: 30%;
+    background-color: $dark_blue_layer;
+    border-radius: 20px;
+    position: absolute;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      margin: 80px 100px;
+
+      .input-margin {
+        height: 50px;
+      }
+
+      input {
+        @include input;
+      }
+
+      button {
+        @include button;
+        width: 200px;
+      }
+    }
+  }
+}
+
+/********** End of Login Page Web **********/
+
+/********** Login Page Responsive **********/
+
+@media (max-width: 800px) {
+  .login-box {
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 0 !important;
+
+    form {
+      margin: 150px 50px 0 !important;
+    }
+  }
+}
+
+/********** End of Login Page Responsive **********/

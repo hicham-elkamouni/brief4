@@ -1,0 +1,105 @@
+@import "./colors";
+@import "./mixin";
+
+/********** Footer Web **********/
+
+footer {
+  background-color: $dark_blue;
+  padding: 90px 250px;
+  display: flex;
+  position: relative;
+  color: $white;
+  padding: 90px 250px;
+
+  .footer-header {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .col1 {
+    width: 40%;
+
+    img {
+      height: 60px;
+    }
+
+    svg {
+      height: 40px;
+      margin-top: 10px;
+      fill: $white;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        fill: $green;
+      }
+    }
+  }
+
+  .col2 {
+    margin: 0 50px 0 100px;
+  }
+
+  .col3 {
+    margin: 0 100px 0 50px;
+  }
+
+  .col4 {
+    width: 40%;
+
+    input {
+      @include input;
+      margin: 10px 0;
+    }
+
+    button {
+      height: 50px;
+      width: 100%;
+      outline: none;
+      border: none;
+      border-radius: 10px;
+      background-color: $green;
+      transition: 0.3s ease-in-out;
+      font-weight: 500;
+      font-size: 18px;
+      color: $white;
+
+      &:hover {
+        color: $green;
+        background-color: $white;
+      }
+    }
+  }
+}
+
+/********** End of Footer-Web **********/
+
+/********** Footer Responsive **********/
+
+@media (max-width: 800px) {
+  footer {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+
+    .footer-header {
+      margin: 15px 0 10px;
+    }
+
+    .col1,
+    .col4 {
+      width: 100% !important;
+    }
+
+    .col2,
+    .col3 {
+      margin: 0 !important;
+    }
+  }
+}
+
+/********** End of Footer Responsive **********/

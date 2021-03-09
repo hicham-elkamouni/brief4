@@ -1,0 +1,63 @@
+@import "./sass/navbar";
+@import "./sass/footer";
+@import "./sass/home";
+@import "./sass/about";
+@import "./sass/contact";
+@import "./sass/login";
+@import "./sass/stdprofile";
+@import "./sass/adminprofile";
+@import "./sass/popups";
+@import "./sass/colors";
+
+* {
+  box-sizing: border-box;
+  font-size: 17px;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins";
+}
+
+/********** Footer Line Styling **********/
+
+.footer-hr {
+  color: $green;
+  border: 1px solid;
+}
+
+/********** Footer Line Styling **********/
+
+/********** Profile Logout Styling **********/
+
+.logout {
+  align-self: flex-start;
+  text-align: end;
+
+  a {
+    color: $white;
+    font-size: 30px;
+    font-weight: bold;
+
+    &:hover {
+      color: $green;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
+
+/********** End of Profile Logout Styling **********/
+
+@media (max-width: 800px) {
+  * {
+    font-size: 16px;
+  }
+
+  /********** Profile Logout Styling Styling **********/
+
+  .logout {
+    a {
+      font-size: 20px !important;
+    }
+  }
+
+  /********** End of Profile Logout Styling **********/
+}

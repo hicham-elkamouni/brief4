@@ -1,0 +1,105 @@
+@import "./colors";
+@import "./mixin";
+
+/********** Admin Profile Page Web **********/
+
+.admin-background {
+  @include profile-bg;
+
+  .admin-profile {
+    width: 80%;
+    margin-top: 120px;
+
+    .admin-bar {
+      background-color: $white;
+      border-radius: 20px;
+      padding: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        color: $green;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+
+    button {
+      @include button;
+      background-color: $dark_blue;
+      color: $white;
+      padding: 0 20px;
+    }
+
+    table {
+      margin-top: 100px;
+      width: 100%;
+      border: 3px solid $green;
+      background-color: $white;
+      border-collapse: collapse;
+      text-align: center;
+
+      th,
+      td {
+        border: 2px solid $green;
+        padding: 20px 5px;
+      }
+
+      th {
+        font-size: 20px;
+        font-weight: bold;
+        color: $dark_blue;
+      }
+
+      span a img {
+        height: 30px;
+      }
+    }
+  }
+}
+
+/********** End of Admin Profile Page Web **********/
+
+/********** Admin Profile Page Responsive **********/
+
+@media (max-width: 800px) {
+  .admin-profile {
+    width: 90% !important;
+    margin-top: 100px !important;
+
+    .admin-bar {
+      border-radius: 10px !important;
+      padding: 15px !important;
+      flex-direction: column;
+
+      p {
+        font-size: 20px !important;
+        margin-bottom: 10px !important;
+      }
+    }
+
+    table {
+      margin-top: 50px !important;
+
+      .hidden-col {
+        display: none !important;
+      }
+
+      th,
+      td {
+        padding: 5px !important;
+      }
+
+      th {
+        font-size: 15px !important;
+      }
+
+      span a img {
+        height: 25px !important;
+      }
+    }
+  }
+}
+
+/********** End of Admin Profile Page Responsive **********/
