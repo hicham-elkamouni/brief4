@@ -12,7 +12,7 @@
 
 <body>
     <!-- Nav Bar -->
-    
+
     <nav>
         <input id="nav-toggle" type="checkbox">
         <div class="logo"><img src="images/logo_navbar.png" alt="Logo">
@@ -32,7 +32,7 @@
             <div class="line"></div>
         </label>
     </nav>
-    
+
     <!-- End of Nav Bar -->
     <!-- Contact Header -->
 
@@ -68,12 +68,32 @@
     <!-- Contact form -->
     <div class="contact-form">
         <span>Drop us a Message for any Query</span>
-        <form action="">
-            <input type="text" id="contact-name" placeholder="Your Name">
-            <input type="text" id="contact-email" placeholder="Your Email">
-            <input type="text" id="contact-phone" placeholder="Your Phone">
-            <input type="text" id="contact-subject" placeholder="Your Subject">
-            <textarea name="" id="contact-msg" placeholder="Your Message"></textarea>
+        <form action="" autocomplete="off">
+            <div class="input-row">
+                <input type="text" id="contact-name" placeholder="Your Name" onkeyup="nameContactValidation()">
+                <img id="name-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                <img id="name-valid" src="icons/save-popup.png" alt="valid icon">
+            </div>
+            <div class="input-row">
+                <input type="text" id="contact-email" placeholder="Your Email" onkeyup="emailConatctValidation()">
+                <img id="email-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                <img id="email-valid" src="icons/save-popup.png" alt="valid icon">
+            </div>
+            <div class="input-row">
+                <input type="text" id="contact-phone" placeholder="Your Phone" onkeyup="phoneContactValidation()">
+                <img id="phone-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                <img id="phone-valid" src="icons/save-popup.png" alt="valid icon">
+            </div>
+            <div class="input-row">
+                <input type="text" id="contact-subject" placeholder="Your Subject" onkeyup="subjectContactValidation()">
+                <img id="subject-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                <img id="subject-valid" src="icons/save-popup.png" alt="valid icon">
+            </div>
+            <div class="input-row">
+                <textarea name="" id="contact-msg" placeholder="Your Message" onkeyup="msgContactValidation()"></textarea>
+                <img id="msg-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                <img id="msg-valid" src="icons/save-popup.png" alt="valid icon">
+            </div>
             <button>Submit</button>
         </form>
     </div>

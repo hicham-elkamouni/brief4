@@ -100,6 +100,12 @@
           border: 2px solid $green;
         }
       }
+      img {
+        position: absolute;
+        height: 25px;
+        transform: translate(150px, 38px);
+        display: none;
+      }
     }
   }
   button {
@@ -168,6 +174,11 @@
         height: 40px !important;
         width: 100% !important;
         margin: 5px 10px !important;
+      }
+      img {
+        height: 25px !important;
+        transform: translate(105px, 13px) !important;
+        display: none;
       }
     }
     button {

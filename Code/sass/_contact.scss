@@ -77,18 +77,34 @@
     flex-wrap: wrap;
     justify-content: center;
 
-    input {
-      @include input;
-      width: 350px;
-      margin: 25px 50px;
-    }
+    .input-row {
+      display: flex;
+      justify-content: center;
+      input {
+        @include input;
+        width: 350px;
+        margin: 25px 50px;
+      }
 
-    textarea {
-      @include input;
-      width: 800px;
-      height: 200px;
-      margin: 25px 50px;
-      resize: none;
+      textarea {
+        @include input;
+        width: 800px;
+        height: 200px;
+        margin: 25px 50px;
+        resize: none;
+      }
+
+      img {
+        position: absolute;
+        height: 25px;
+        // transform: translate(360px, -62px);
+        transform: translate(145px, 38px);
+        display: none;
+      }
+      #msg-invalid,
+      #msg-valid {
+        transform: translate(370px, 38px);
+      }
     }
   }
 
@@ -145,13 +161,26 @@ iframe {
       padding: 20px;
       margin: 25px 0 80px;
 
-      input {
-        margin: 10px;
-      }
+      .input-row {
+        input {
+          margin: 10px;
+          width: 260px;
+        }
 
-      textarea {
-        height: 100px;
-        margin: 10px;
+        textarea {
+          width: 260px;
+          height: 100px;
+          margin: 10px;
+        }
+
+        img {
+          transform: translate(105px, 18px);
+          display: none;
+        }
+        #msg-invalid,
+        #msg-valid {
+          transform: translate(105px, 18px);
+        }
       }
     }
 

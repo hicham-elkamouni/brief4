@@ -31,10 +31,11 @@
 .logout {
   align-self: flex-start;
   text-align: end;
+  margin: 0 20px 10px 0;
 
   a {
     color: $white;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
 
     &:hover {
@@ -54,6 +55,8 @@
   /********** Profile Logout Styling Styling **********/
 
   .logout {
+    margin: 0 10px 8px 0 !important;
+
     a {
       font-size: 20px !important;
     }

@@ -210,7 +210,7 @@ footer .col4 input {
   border-radius: 10px;
   outline: none;
   height: 50px;
-  padding: 10px;
+  padding: 10px 40px 10px 10px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   margin: 10px 0;
@@ -1149,46 +1149,55 @@ h2 {
           justify-content: center;
 }
 
-.contact-form form input {
+.contact-form form .input-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contact-form form .input-row input {
   width: 100%;
   border: 2px solid #fff;
   border-radius: 10px;
   outline: none;
   height: 50px;
-  padding: 10px;
+  padding: 10px 40px 10px 10px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   width: 350px;
   margin: 25px 50px;
 }
 
-.contact-form form input:focus::-webkit-input-placeholder {
+.contact-form form .input-row input:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-.contact-form form input:focus:-ms-input-placeholder {
+.contact-form form .input-row input:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-.contact-form form input:focus::-ms-input-placeholder {
+.contact-form form .input-row input:focus::-ms-input-placeholder {
   color: transparent;
 }
 
-.contact-form form input:focus::placeholder {
+.contact-form form .input-row input:focus::placeholder {
   color: transparent;
 }
 
-.contact-form form input:focus {
+.contact-form form .input-row input:focus {
   border: 2px solid #3db166;
 }
 
-.contact-form form textarea {
+.contact-form form .input-row textarea {
   width: 100%;
   border: 2px solid #fff;
   border-radius: 10px;
   outline: none;
   height: 50px;
-  padding: 10px;
+  padding: 10px 40px 10px 10px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   width: 800px;
@@ -1197,24 +1206,38 @@ h2 {
   resize: none;
 }
 
-.contact-form form textarea:focus::-webkit-input-placeholder {
+.contact-form form .input-row textarea:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-.contact-form form textarea:focus:-ms-input-placeholder {
+.contact-form form .input-row textarea:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-.contact-form form textarea:focus::-ms-input-placeholder {
+.contact-form form .input-row textarea:focus::-ms-input-placeholder {
   color: transparent;
 }
 
-.contact-form form textarea:focus::placeholder {
+.contact-form form .input-row textarea:focus::placeholder {
   color: transparent;
 }
 
-.contact-form form textarea:focus {
+.contact-form form .input-row textarea:focus {
   border: 2px solid #3db166;
+}
+
+.contact-form form .input-row img {
+  position: absolute;
+  height: 25px;
+  -webkit-transform: translate(145px, 38px);
+          transform: translate(145px, 38px);
+  display: none;
+}
+
+.contact-form form .input-row #msg-invalid,
+.contact-form form .input-row #msg-valid {
+  -webkit-transform: translate(370px, 38px);
+          transform: translate(370px, 38px);
 }
 
 .contact-form button {
@@ -1284,12 +1307,24 @@ iframe {
     padding: 20px;
     margin: 25px 0 80px;
   }
-  .contact-form form input {
+  .contact-form form .input-row input {
     margin: 10px;
+    width: 260px;
   }
-  .contact-form form textarea {
+  .contact-form form .input-row textarea {
+    width: 260px;
     height: 100px;
     margin: 10px;
+  }
+  .contact-form form .input-row img {
+    -webkit-transform: translate(105px, 18px);
+            transform: translate(105px, 18px);
+    display: none;
+  }
+  .contact-form form .input-row #msg-invalid,
+  .contact-form form .input-row #msg-valid {
+    -webkit-transform: translate(105px, 18px);
+            transform: translate(105px, 18px);
   }
   .contact-form button {
     margin: 20px;
@@ -1357,43 +1392,56 @@ iframe {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  text-align: center;
   margin: 80px 100px;
 }
 
-.login-background .login-box form .input-margin {
-  height: 50px;
-}
-
-.login-background .login-box form input {
+.login-background .login-box form .input-row input {
   width: 100%;
   border: 2px solid #fff;
   border-radius: 10px;
   outline: none;
   height: 50px;
-  padding: 10px;
+  padding: 10px 40px 10px 10px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
 
-.login-background .login-box form input:focus::-webkit-input-placeholder {
+.login-background .login-box form .input-row input:focus::-webkit-input-placeholder {
   color: transparent;
 }
 
-.login-background .login-box form input:focus:-ms-input-placeholder {
+.login-background .login-box form .input-row input:focus:-ms-input-placeholder {
   color: transparent;
 }
 
-.login-background .login-box form input:focus::-ms-input-placeholder {
+.login-background .login-box form .input-row input:focus::-ms-input-placeholder {
   color: transparent;
 }
 
-.login-background .login-box form input:focus::placeholder {
+.login-background .login-box form .input-row input:focus::placeholder {
   color: transparent;
 }
 
-.login-background .login-box form input:focus {
+.login-background .login-box form .input-row input:focus {
   border: 2px solid #3db166;
+}
+
+.login-background .login-box form .input-row img {
+  position: absolute;
+  height: 25px;
+  -webkit-transform: translate(335px, -38px);
+          transform: translate(335px, -38px);
+  display: none;
+}
+
+.login-background .login-box form .input-row small {
+  padding-left: 10px;
+  color: #cf2716;
+  display: none;
+}
+
+.login-background .login-box form .input-margin {
+  height: 30px;
 }
 
 .login-background .login-box form button {
@@ -1428,6 +1476,13 @@ iframe {
   }
   .login-box form {
     margin: 150px 50px 0 !important;
+  }
+  .login-box form img {
+    -webkit-transform: translate(240px, -32px) !important;
+            transform: translate(240px, -32px) !important;
+  }
+  .login-box form small {
+    font-size: 15px;
   }
 }
 
@@ -1666,7 +1721,7 @@ iframe {
             flex-direction: column;
   }
   .admin-profile .admin-bar p {
-    font-size: 20px !important;
+    font-size: 25px !important;
     margin-bottom: 10px !important;
   }
   .admin-profile table {
@@ -1844,7 +1899,7 @@ iframe {
   border-radius: 10px;
   outline: none;
   height: 50px;
-  padding: 10px;
+  padding: 10px 40px 10px 10px;
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   width: 350px;
@@ -1885,6 +1940,14 @@ iframe {
 
 .create-edit-popup form .input-row select:focus {
   border: 2px solid #3db166;
+}
+
+.create-edit-popup form .input-row img {
+  position: absolute;
+  height: 25px;
+  -webkit-transform: translate(150px, 38px);
+          transform: translate(150px, 38px);
+  display: none;
 }
 
 .create-edit-popup button {
@@ -1969,6 +2032,12 @@ iframe {
     width: 100% !important;
     margin: 5px 10px !important;
   }
+  .create-edit-popup .input-row img {
+    height: 25px !important;
+    -webkit-transform: translate(105px, 13px) !important;
+            transform: translate(105px, 13px) !important;
+    display: none;
+  }
   .create-edit-popup button {
     -ms-flex-item-align: center;
         -ms-grid-row-align: center;
@@ -2020,11 +2089,12 @@ iframe {
   -ms-flex-item-align: start;
       align-self: flex-start;
   text-align: end;
+  margin: 0 20px 10px 0;
 }
 
 .logout a {
   color: #fff;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -2040,6 +2110,9 @@ iframe {
     font-size: 16px;
   }
   /********** Profile Logout Styling Styling **********/
+  .logout {
+    margin: 0 10px 8px 0 !important;
+  }
   .logout a {
     font-size: 20px !important;
   }

@@ -28,15 +28,28 @@
     form {
       display: flex;
       flex-direction: column;
-      text-align: center;
       margin: 80px 100px;
 
-      .input-margin {
-        height: 50px;
+      .input-row {
+        input {
+          @include input;
+        }
+
+        img {
+          position: absolute;
+          height: 25px;
+          transform: translate(335px, -38px);
+          display: none;
+        }
+        small {
+          padding-left: 10px;
+          color: #cf2716;
+          display: none;
+        }
       }
 
-      input {
-        @include input;
+      .input-margin {
+        height: 30px;
       }
 
       button {
@@ -59,6 +72,13 @@
 
     form {
       margin: 150px 50px 0 !important;
+
+      img {
+        transform: translate(240px, -32px) !important;
+      }
+      small {
+        font-size: 15px;
+      }
     }
   }
 }

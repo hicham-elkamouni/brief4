@@ -84,40 +84,60 @@
     <div id="fill-form" class="popup-bg">
         <div class="create-edit-popup">
             <a class="close" href="#" class="">Close</a>
-            <form action="">
+            <form action="" autocomplete="off">
                 <div class="input-row">
-                    <input type="text" id="std-email" placeholder="Email">
+                    <input class="std-form" type="text" id="std-email" placeholder="Email" onkeyup="emailValidation()">
+                        <img id="email-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                        <img id="email-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <input type="text" id="std-password" placeholder="Password">
+                    <input class="std-form" type="text" id="std-password" placeholder="Password" onkeyup="passwordValidation()">
+                    <img id="password-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                    <img id="password-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <input type="text" id="std-name" placeholder="Name">
+                    <input class="std-form" type="text" id="std-name" placeholder="Name" onkeyup="nameValidation()">
+                    <img id="name-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                    <img id="name-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <select type="text" id="std-gender" placeholder="Gender">
-                        <option id="select-gender" disabled selected>Gender</option>
-                        <option value="">Male</option>
-                        <option value="">Female</option>
+                    <select class="std-form" type="text" id="std-gender" placeholder="Gender" onkeyup="genderValidation()">
+                        <option disabled selected>Gender</option>
+                        <option class="select-gender" value="Male">Male</option>
+                        <option class="select-gender" value="Female">Female</option>
                     </select>
                 </div>
                 <div class="input-row">
-                    <input type="text" id="std-age" placeholder="Age">
+                    <input class="std-form" type="text" id="std-age" placeholder="Age" onkeyup="ageValidation()">
+                    <img id="age-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                    <img id="age-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <input type="text" id="std-adress" placeholder="Adress">
+                    <input class="std-form" type="text" id="std-adress" placeholder="Adress" onkeyup="adressValidation()">
+                    <img id="adress-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                    <img id="adress-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <input type="text" id="std-phone" placeholder="Parent Phone">
+                    <input class="std-form" type="text" id="std-phone" placeholder="Parent Phone" onkeyup="phoneValidation()">
+                    <img id="phone-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                    <img id="phone-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <input type="text" id="std-class" placeholder="Class">
+                    <select class="std-form" type="text" id="std-class" placeholder="Class" onkeyup="classValidation()">
+                        <option disabled selected>Class</option>
+                        <option class="select-gender" value="">Class 1</option>
+                        <option class="select-gender" value="">Class 2</option>
+                    </select>
                 </div>
                 <div class="input-row">
-                    <input type="text" id="math-mark" placeholder="Math Mark">
+                    <input class="std-form" type="text" id="math-mark" placeholder="Math Mark" onkeyup="mathValidation()">
+                    <img id="math-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                    <img id="math-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <input type="text" id="english-mark" placeholder="English Mark">
+                    <input class="std-form" type="text" id="english-mark" placeholder="English Mark" onkeyup="englishValidation()">
+                    <img id="english-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                    <img id="english-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
             </form>
             <a href="#save-changes"><button>Save</button></a>

@@ -12,7 +12,7 @@
 
 <body>
     <!-- Nav Bar -->
-    
+
     <nav>
         <input id="nav-toggle" type="checkbox">
         <div class="logo"><img src="images/logo_navbar.png" alt="Logo">
@@ -32,16 +32,26 @@
             <div class="line"></div>
         </label>
     </nav>
-    
+
     <!-- End of Nav Bar -->
     <!-- Login Box -->
 
     <div class="login-background">
         <div class="login-box">
-            <form action="">
-                <input type="text" id="login-email" placeholder="Your Email">
+            <form action="" autocomplete="off">
+                <div class="input-row">
+                    <input type="text" id="login-email" placeholder="Your Email" onkeyup="emailLoginValidation()">
+                    <img id="email-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                    <img id="email-valid" src="icons/save-popup.png" alt="valid icon">
+                    <small id="email-error">Email is incorrect, please try again.</small>
+                </div>
                 <div class="input-margin"></div>
-                <input type="password" id="login-password" placeholder="Your Password">
+                <div class="input-row">
+                    <input type="password" id="login-password" placeholder="Your Password" onkeyup="passwordLoginValidation()">
+                    <img id="password-invalid" src="icons/invalid-icon.png" alt="invalid icon">
+                    <img id="password-valid" src="icons/save-popup.png" alt="valid icon">
+                    <small id="password-error">Password is incorrect, please try again.</small>
+                </div>
                 <div class="input-margin"></div>
                 <button class="Submit">Login</button>
             </form>
@@ -55,10 +65,9 @@
     <footer>
         <div class="col1">
             <img src="images/logo_footer.png" alt="Mariana School Logo">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                et dolore magna
-                aliqua.</p>
-                <span class="icon-span">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <span class="icon-span">
                     <svg class="facebook" viewBox="0 0 512 512">
                             <path class="icon"
                                 d="M211.9 197.4h-36.7v59.9h36.7V433.1h70.5V256.5h49.2l5.2-59.1h-54.4c0 0 0-22.1 0-33.7 0-13.9 2.8-19.5 16.3-19.5 10.9 0 38.2 0 38.2 0V82.9c0 0-40.2 0-48.8 0 -52.5 0-76.1 23.1-76.1 67.3C211.9 188.8 211.9 197.4 211.9 197.4z" />
