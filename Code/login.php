@@ -1,3 +1,6 @@
+<?php
+    include 'includes/connect.php';
+?>
 <!DOCTYPE html>
 <html>
 
@@ -18,13 +21,13 @@
         <div class="logo"><img src="images/logo_navbar.png" alt="Logo">
         </div>
         <ul class="links">
-            <li><a href="index.html" style="color: #3db166;">Home</a></li>
+            <li><a href="index.php" style="color: #3db166;">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="">Curriculum</a></li>
             <li><a href="">Gallery</a></li>
             <li><a href="">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="login.php">Login</a></li>
         </ul>
         <label for="nav-toggle" class="icon-burger">
             <div class="line"></div>
@@ -38,22 +41,22 @@
 
     <div class="login-background">
         <div class="login-box">
-            <form action="" autocomplete="off">
+            <form action="includes/login_check.php" method="POST" autocomplete="off">
                 <div class="input-row">
-                    <input type="text" id="login-email" placeholder="Your Email" onkeyup="emailLoginValidation()">
+                    <input type="text" name="email" id="login-email" placeholder="Your Email" onkeyup="emailLoginValidation()">
                     <img id="email-invalid" src="icons/invalid-icon.png" alt="invalid icon">
                     <img id="email-valid" src="icons/save-popup.png" alt="valid icon">
                     <small id="email-error">Email is incorrect, please try again.</small>
                 </div>
                 <div class="input-margin"></div>
                 <div class="input-row">
-                    <input type="password" id="login-password" placeholder="Your Password" onkeyup="passwordLoginValidation()">
+                    <input type="password" name="password" id="login-password" placeholder="Your Password" onkeyup="passwordLoginValidation()">
                     <img id="password-invalid" src="icons/invalid-icon.png" alt="invalid icon">
                     <img id="password-valid" src="icons/save-popup.png" alt="valid icon">
                     <small id="password-error">Password is incorrect, please try again.</small>
                 </div>
                 <div class="input-margin"></div>
-                <button class="Submit">Login</button>
+                <button type="submit" class="Submit">Login</button>
             </form>
 
         </div>

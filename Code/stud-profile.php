@@ -1,32 +1,34 @@
+<?php
+    include 'includes/login_check.php';
+    session_start(); 
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>STD</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
+    <script src='main.js'></script>
 </head>
 
 <body>
     <!-- Nav Bar -->
-
+    
     <nav>
         <input id="nav-toggle" type="checkbox">
         <div class="logo"><img src="images/logo_navbar.png" alt="Logo">
         </div>
         <ul class="links">
-            <li><a href="index.html" style="color: #3db166;">Home</a></li>
+            <li><a href="index.php" style="color: #3db166;">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="">Curriculum</a></li>
             <li><a href="">Gallery</a></li>
             <li><a href="">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="login.php">Login</a></li>
         </ul>
         <label for="nav-toggle" class="icon-burger">
             <div class="line"></div>
@@ -34,133 +36,68 @@
             <div class="line"></div>
         </label>
     </nav>
-
-    <!-- End of Nav Bar -->
-    <!-- Hero Section -->
-
-    <div class="img-container">
-        <div class="inner-container">
-            <h1 class="hero_title">Education is the key to <span>Success</span></h1>
-            <p class="hero_paragraphe">Making an Impact on</br> Classrooms and Communities</p>
-            <button>Explore Now</button>
-        </div>
-    </div>
-
-    <!-- End of Hero Section -->
-    <!-- Start of Div -->
-
-    <div class="space_div"></div>
-
-    <!-- End of Div -->
-    <!--- Section 1 -->
-
-    <h2 class="section_title1">Browse Our Curriculum</h2>
-
-    <div class="container">
-
-        <div class="box">
-            <center><img class="box_img" src="icons/chip.png" alt="#"></center>
-            <center>
-                <h3 class="box_txt">Technology</h3>
-            </center>
-        </div>
-
-        <div class="box">
-            <center><img class="box_img" src="icons/science.png" alt="#"></center>
-
-            <center>
-                <h3 class="box_txt">Science</h3>
-            </center>
-        </div>
-        <div class="box">
-            <center><img class="box_img" src="icons/Humanity.png" alt="#"></center>
-            <center>
-                <h3 class="box_txt">Humanities</h3>
-            </center>
-        </div>
-
-        <div class="box">
-            <center><img class="box_img" src="icons/language.png" alt="#"></center>
-            <center>
-                <h3 class="box_txt">Language</h3>
-            </center>
-        </div>
-
-        <div class="box">
-            <center><img class="box_img" src="icons/business.png" alt="#"></center>
-            <center>
-                <h3 class="box_txt">Business</h3>
-            </center>
-        </div>
-
-        <div class="box">
-            <center><img class="box_img" src="icons/art.png" alt="#"></center>
-            <center>
-                <h3 class="box_txt">Arts</h3>
-            </center>
-        </div>
-
-        <div class="box">
-            <center><img class="box_img" src="icons/math.png" alt="#"></center>
-            <center>
-                <h3 class="box_txt">Math</h3>
-            </center>
-        </div>
-
-        <div class="box">
-            <center><img class="box_img" src="icons/sport.png" alt="#"></center>
-            <center>
-                <h3 class="box_txt">Sports</h3>
-            </center>
-        </div>
-    </div>
-
-    <div class="view_more_btn">
-        <button>View More</button>
-    </div>
-
-    <!-- End of Section 1 -->
-    <!-- Start of Div -->
-
-    <div class="space_div"></div>
-
-    <!-- End of Div -->
-    <!-- Section 2 About us -->
-
-    <h2 class="section_title1">About Us</h2>
-
-    <div class="container_about_us">
-        <div class="img">
-            <img src="images/home-about.png" alt="about_us">
-        </div>
-        <div class="txt">
-            <p class="txt_para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic inventore soluta mollitia.
-                Pariatur, fuga necessitatibus. Fuga officiis saepe nesciunt vitae ducimus maxime odio, tempore
-                consequatur. Eius, asperiores. Debitis placeat magnam, minima
-                animi sunt, tenetur suscipit odio aperiam enim praesentium modi possimus velit nobis dolorem in dolore
-                optio commodi dolores eveniet nesciunt incidunt, explicabo consequuntur facilis. Quas exercitationem
-                error laborum labore! Modi vel
-                veritatis hic voluptatibus accusamus deleniti expedita repellat, neque porro culpa non sint temporibus
-                sit placeat, ex soluta ea quae magnam quia mollitia, minus asperiores corrupti? Assumenda ipsam
-                consequuntur autem voluptate? In autem
-                magnam quibusdam at molestias facere nihil libero quasi vitae et, iure, quos repellat nulla suscipit
-                aliquid corporis temporibus fugiat enim quo? Repellat omnis perferendis esse blanditiis tenetur optio
-                vitae quae. Maiores harum error
-                numquam vitae alias architecto a optio, totam quod perspiciatis dolorem itaque mollitia fugit porro,
-                soluta, iusto facere esse ratione debitis dignissimos non molestias fugiat sed! Neque molestias eligendi
-                cumque itaque vel. Quibusdam,
-                consequatur!
-            </p>
-        </div>
-    </div>
-    <!-- End of Section 2 About us -->
-    <!-- Start of Div -->
-
-    <div class="space_div"></div>
-
-    <!-- End of Div -->
-    <!-- Footer-->
     
+    <!-- End of Nav Bar -->
+    <!-- Student Profile-->
+    <div class="stud-background">
+        <div class="std-profile">
+            <div class="logout"><a href="login.php">Logout</a></div>
+
+            <!-- Collecting student data from database to display in profile -->
+            <?php
+            // storing session from login_check.php in $ID_std
+            $ID_std = $_SESSION['ID_Std'];
+
+                $student_details = mysqli_query($connection, "SELECT * FROM visitor, student, subjects, marks WHERE visitor.idV = $ID_std  AND student.idV = visitor.idV AND student.idStu = marks.idStu AND subjects.idSub = marks.idSub AND subjects.subject_name = 'math'");
+                
+                $student_english = mysqli_query($connection, "SELECT marks.mark FROM visitor, student, subjects, marks WHERE visitor.idV = $ID_std AND student.idStu = marks.idStu AND subjects.idSub = marks.idSub and subjects.subject_name = 'english'");
+
+                 // While Loop to display row of data from database in student profile
+                while(($row = $student_details->fetch_assoc()) && ($row_english = $student_english->fetch_assoc())){
+                ?>
+                <div class="stud-rows">
+                <div class="stud-row">
+                    <p class="stud-info">Name</p>
+                    <p class="stud-info-display"><?php echo $row['full_name']; ?></p>
+                </div>
+                <div class="stud-row">
+                    <p class="stud-info">Email</p>
+                    <p class="stud-info-display"><?php echo $row['adress']; ?></p>
+                </div>
+                <div class="stud-row">
+                    <p class="stud-info">Gender</p>
+                    <p class="stud-info-display"><?php echo $row['gender']; ?></p>
+                </div>
+                <div class="stud-row">
+                    <p class="stud-info">Age</p>
+                    <p class="stud-info-display"><?php echo $row['age']; ?></p>
+                </div>
+                <div class="stud-row">
+                    <p class="stud-info">Adress</p>
+                    <p class="stud-info-display"><?php echo $row['adress']; ?></p>
+                </div>
+                <div class="stud-row">
+                    <p class="stud-info">Class</p>
+                    <p class="stud-info-display"><?php echo $row['class']; ?></p>
+                </div>
+                <div class="stud-row">
+                    <p class="stud-info">Math Mark</p>
+                    <p class="stud-info-display"><?php echo $row['mark']; ?></p>
+                </div>
+                <div class="stud-row">
+                    <p class="stud-info">English Mark</p>
+                    <p class="stud-info-display"><?php echo $row_english['mark']; ?></p>
+                </div>
+            </div>
+            <?php } ?> 
+        </div>
+    </div>
+    <!-- End Student Profile-->
+
+<hr class="footer-hr">
+    
+    <!-- Footer-->
+
     <footer>
         <div class="col1">
             <img src="images/logo_footer.png" alt="Mariana School Logo">
@@ -226,7 +163,7 @@
             </ul>
         </div>
     </footer>
-    
+
     <!-- End Footer-->
 </body>
 

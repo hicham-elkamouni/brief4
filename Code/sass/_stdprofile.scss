@@ -4,73 +4,67 @@
 /********** Student Profile Page Website **********/
 
 .stud-background {
-  @include profile-bg;
-  align-items: center;
-
-  .std-profile {
-    width: 45%;
-
-    .stud-rows {
-      height: unset;
-      background-color: $white;
-      border-radius: 20px;
-      padding: 30px 100px;
-
-      .stud-row {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding: 5px 0;
-
-        .stud-info {
-          width: 200px;
-          margin-right: 100px;
-          color: $green;
-          font-size: 30px;
-          font-weight: bold;
+    @include profile-bg;
+    align-items: center;
+    .std-profile {
+        width: 45%;
+        margin: 150px 0;
+        .stud-rows {
+            height: unset;
+            background-color: $white;
+            border-radius: 20px;
+            padding: 30px 100px;
+            .stud-row {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 5px 0;
+                .stud-info {
+                    width: 200px;
+                    margin-right: 100px;
+                    color: $green;
+                    font-size: 30px;
+                    font-weight: bold;
+                }
+                .stud-info-display {
+                    font-size: 20px;
+                    color: $dark_blue;
+                }
+            }
         }
-
-        .stud-info-display {
-          font-size: 20px;
-          color: $dark_blue;
-        }
-      }
     }
-  }
 }
 
+
 /********** End of Student Profile Page Website **********/
+
 
 /********** Student Profile Page Responsive **********/
 
 @media (max-width: 800px) {
-  .std-profile {
-    width: 90% !important;
-
-    a {
-      font-size: 20px !important;
-    }
-
-    .stud-rows {
-      text-align: center;
-      height: unset;
-      border-radius: 10px !important;
-      padding: 20px !important;
-
-      .stud-row {
-        flex-direction: column;
-
-        .stud-info {
-          margin-right: 0 !important;
-          font-size: 20px !important;
+    .std-profile {
+        width: 90% !important;
+        a {
+            font-size: 20px !important;
         }
-
-        .stud-info-display {
-          font-size: 18px !important;
+        .stud-rows {
+            text-align: center;
+            height: unset;
+            border-radius: 10px !important;
+            padding: 20px !important;
+            .stud-row {
+                flex-direction: column;
+                .stud-info {
+                    margin-right: 0 !important;
+                    font-size: 20px !important;
+                }
+                .stud-info-display {
+                    font-size: 18px !important;
+                }
+            }
         }
-      }
     }
-  }
 }
+
 
 /********** End of Student Profile Page Responsive **********/

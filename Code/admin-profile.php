@@ -1,3 +1,7 @@
+<?php
+    include 'includes/create.php';
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -18,13 +22,13 @@
         <div class="logo"><img src="images/logo_navbar.png" alt="Logo">
         </div>
         <ul class="links">
-            <li><a href="index.html" style="color: #3db166;">Home</a></li>
+            <li><a href="index.php" style="color: #3db166;">Home</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="">Curriculum</a></li>
             <li><a href="">Gallery</a></li>
             <li><a href="">Blog</a></li>
             <li><a href="contact.html">Contact</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="login.php">Login</a></li>
         </ul>
         <label for="nav-toggle" class="icon-burger">
             <div class="line"></div>
@@ -38,7 +42,7 @@
     <div class="admin-background">
         <!-- Admin Profile -->
         <div class="admin-profile">
-            <div class="logout"><a href="#">Logout</a></div>
+            <div class="logout"><a href="login.php">Logout</a></div>
 
             <div class="admin-bar">
                 <p>Students Records</p>
@@ -58,22 +62,33 @@
                     <th class="hidden-col">English Mark</th>
                     <th>Edit / Delete</th>
                 </tr>
+                
+                <!-- Collecting student data from database to display in table -->
+                <?php
+                $result_details = mysqli_query($connection, "SELECT visitor.idV, student.idStu, visitor.email, student.full_name, student.age, student.adress, student.gender, student.parent_phone, student.class, marks.mark FROM visitor, student, subjects, marks WHERE visitor.idV = student.idV AND student.idStu = marks.idStu AND subjects.idSub = marks.idSub AND subjects.subject_name = 'math'");
+
+                $result_english = mysqli_query($connection, "SELECT marks.mark FROM student, subjects, marks WHERE student.idStu = marks.idStu AND subjects.idSub = marks.idSub and subjects.subject_name = 'english'");
+
+                // While Loop to display multiple rows of data from database in table
+                while(($row = $result_details->fetch_assoc()) && ($row_english = $result_english->fetch_assoc())){
+                ?>
                 <tr>
-                    <td>1</td>
-                    <td class="hidden-col">name@gmail.com</td>
-                    <td>Full Name</td>
-                    <td>M / F</td>
-                    <td class="hidden-col">00</td>
-                    <td class="hidden-col">00 St Lorem, City, Country</td>
-                    <td class="hidden-col">+1 000 000 00</td>
-                    <td class="hidden-col">Class 00</td>
-                    <td class="hidden-col">00</td>
-                    <td class="hidden-col">00</td>
+                    <td><?php echo $row['idStu']; ?></td>
+                    <td class="hidden-col"><?php echo $row['email']; ?></td>
+                    <td><?php echo $row['full_name']; ?></td>
+                    <td><?php echo $row['gender']; ?></td>
+                    <td class="hidden-col"><?php echo $row['age']; ?></td>
+                    <td class="hidden-col"><?php echo $row['adress']; ?></td>
+                    <td class="hidden-col"><?php echo $row['parent_phone']; ?></td>
+                    <td class="hidden-col"><?php echo $row['class']; ?></td>
+                    <td class="hidden-col"><?php echo $row['mark']; ?></td>
+                    <td class="hidden-col"><?php echo $row_english['mark']; ?></td>
                     <td><span>
                             <a href="#fill-form"><img src="icons/edit-icon.png" alt="Edit profile icon"></a>
-                            <a href="#delete-profile"><img src="icons/delete-icon.png" alt="Delete profile icon"></a>
+                            <a href="includes/delete.php?delete=<?php echo $row['idV'];?>"><img src="icons/delete-icon.png" alt="Delete profile icon"></a>
                         </span></td>
                 </tr>
+                <?php } ?>                
             </table>
         </div>
 
@@ -84,63 +99,64 @@
     <div id="fill-form" class="popup-bg">
         <div class="create-edit-popup">
             <a class="close" href="#" class="">Close</a>
-            <form action="" autocomplete="off">
+            <form action="includes/create.php" method="POST" autocomplete="off">
                 <div class="input-row">
-                    <input class="std-form" type="text" id="std-email" placeholder="Email" onkeyup="emailValidation()">
+                    <input class="std-form" type="text" name="std-email" id="std-email" placeholder="Email" onkeyup="emailValidation()">
                         <img id="email-invalid" src="icons/invalid-icon.png" alt="invalid icon">
                         <img id="email-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <input class="std-form" type="text" id="std-password" placeholder="Password" onkeyup="passwordValidation()">
+                    <input class="std-form" type="text" name="std-password" id="std-password" placeholder="Password" onkeyup="passwordValidation()">
                     <img id="password-invalid" src="icons/invalid-icon.png" alt="invalid icon">
                     <img id="password-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <input class="std-form" type="text" id="std-name" placeholder="Name" onkeyup="nameValidation()">
+                    <input class="std-form" type="text" name="std-name" id="std-name" placeholder="Name" onkeyup="nameValidation()">
                     <img id="name-invalid" src="icons/invalid-icon.png" alt="invalid icon">
                     <img id="name-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <select class="std-form" type="text" id="std-gender" placeholder="Gender" onkeyup="genderValidation()">
+                    <select class="std-form" type="text" name="std-gender" id="std-gender" placeholder="Gender" onkeyup="genderValidation()">
                         <option disabled selected>Gender</option>
-                        <option class="select-gender" value="Male">Male</option>
-                        <option class="select-gender" value="Female">Female</option>
+                        <option class="select-gender" >Male</option>
+                        <option class="select-gender" >Female</option>
                     </select>
                 </div>
                 <div class="input-row">
-                    <input class="std-form" type="text" id="std-age" placeholder="Age" onkeyup="ageValidation()">
+                    <input class="std-form" type="text" name="std-age" id="std-age" placeholder="Age" onkeyup="ageValidation()">
                     <img id="age-invalid" src="icons/invalid-icon.png" alt="invalid icon">
                     <img id="age-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <input class="std-form" type="text" id="std-adress" placeholder="Adress" onkeyup="adressValidation()">
+                    <input class="std-form" type="text" name="std-adress" id="std-adress" placeholder="Adress" onkeyup="adressValidation()">
                     <img id="adress-invalid" src="icons/invalid-icon.png" alt="invalid icon">
                     <img id="adress-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <input class="std-form" type="text" id="std-phone" placeholder="Parent Phone" onkeyup="phoneValidation()">
+                    <input class="std-form" type="text" name="std-phone" id="std-phone" placeholder="Parent Phone" onkeyup="phoneValidation()">
                     <img id="phone-invalid" src="icons/invalid-icon.png" alt="invalid icon">
                     <img id="phone-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <select class="std-form" type="text" id="std-class" placeholder="Class" onkeyup="classValidation()">
+                    <select class="std-form" type="text" name="std-class" id="std-class" placeholder="Class" onkeyup="classValidation()">
                         <option disabled selected>Class</option>
-                        <option class="select-gender" value="">Class 1</option>
-                        <option class="select-gender" value="">Class 2</option>
+                        <option class="select-gender" value="Class 1">Class 1</option>
+                        <option class="select-gender" value="Class 2">Class 2</option>
                     </select>
                 </div>
                 <div class="input-row">
-                    <input class="std-form" type="text" id="math-mark" placeholder="Math Mark" onkeyup="mathValidation()">
+                    <input class="std-form" type="text" name="math-mark" id="math-mark" placeholder="Math Mark" onkeyup="mathValidation()">
                     <img id="math-invalid" src="icons/invalid-icon.png" alt="invalid icon">
                     <img id="math-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
                 <div class="input-row">
-                    <input class="std-form" type="text" id="english-mark" placeholder="English Mark" onkeyup="englishValidation()">
+                    <input class="std-form" type="text" name="english-mark" id="english-mark" placeholder="English Mark" onkeyup="englishValidation()">
                     <img id="english-invalid" src="icons/invalid-icon.png" alt="invalid icon">
                     <img id="english-valid" src="icons/save-popup.png" alt="valid icon">
                 </div>
+                <button name="save" type="submit">Save</button>
             </form>
-            <a href="#save-changes"><button>Save</button></a>
+           
         </div>
 
     </div>
