@@ -1,6 +1,11 @@
 <?php
     include 'includes/login_check.php';
-    session_start(); 
+    session_start();
+
+    // Check if student is logged in
+    if(!isset($_SESSION['ID_Std'])){
+    header("Location:login.php");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -41,7 +46,7 @@
     <!-- Student Profile-->
     <div class="stud-background">
         <div class="std-profile">
-            <div class="logout"><a href="login.php">Logout</a></div>
+            <div class="logout"><a href="includes/logout.php">Logout</a></div>
 
             <!-- Collecting student data from database to display in profile -->
             <?php

@@ -1,5 +1,17 @@
 <?php
     include 'includes/connect.php';
+    
+    session_start();
+
+    // Check if admin is logged in
+    if(isset($_SESSION['ID_Admin'])){
+        header("Location:admin-profile.php");
+    }
+
+    // Check if student is logged in
+    if(isset($_SESSION['ID_Std'])){
+        header("Location:stud-profile.php");
+    }
 ?>
 <!DOCTYPE html>
 <html>

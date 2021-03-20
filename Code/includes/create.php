@@ -2,6 +2,8 @@
     include 'connect.php'; 
 
     if(isset($_POST['save'])){
+
+        //storing inputs into variables
         $email = $_POST['std-email'];
         $password = $_POST['std-password'];
         $name = $_POST['std-name'];
@@ -13,6 +15,7 @@
         $math_mark = $_POST['math-mark'];
         $english_mark = $_POST['english-mark'];
 
+        // check if the input fields are empty
         if(!empty($email) && !empty($password) && !empty($name) && !empty($gender) && !empty($age) && !empty($adress) && !empty($phone) && !empty($class) && !empty($math_mark) && !empty($english_mark)){
         
         // inserting email & password in the table visitor
@@ -38,6 +41,7 @@
         mysqli_query($connection, $query_marks);
 
         header("Location:../admin-profile.php");
+
         }else{
             header("Location:../admin-profile.php?error?Please Fill the Form#fill-form");
         }

@@ -4,198 +4,166 @@
 /********** Popups Styling Website **********/
 
 .popup-bg {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-  background: $overlay;
-  transition: 0.3s opacity;
-  visibility: hidden;
-  opacity: 0;
-
-  &:target {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  .close {
-    transition: 0.3s opacity;
-    font-size: 20px;
-    font-weight: bold;
-    text-decoration: none;
-    color: $white;
-    align-self: flex-end;
-
-    &:hover {
-      color: $green;
-      text-decoration: underline;
-    }
-  }
-
-  img {
-    height: 80px;
-  }
-
-  p {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-    color: $white;
-    margin-top: 20px;
-  }
-
-  .choose {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
-  }
-
-  button {
-    @include button;
-    width: 200px;
-    margin: 25px;
-  }
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background: $overlay;
+    transition: 0.3s opacity;
+    visibility: hidden;
+    opacity: 0;
+    &:target {
+        visibility: visible;
+        opacity: 1;
+    }
+    .close {
+        transition: 0.3s opacity;
+        font-size: 20px;
+        font-weight: bold;
+        text-decoration: none;
+        color: $white;
+        align-self: flex-end;
+        &:hover {
+            color: $green;
+            text-decoration: underline;
+        }
+    }
+    img {
+        height: 80px;
+    }
+    p {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 600;
+        color: $white;
+        margin-top: 20px;
+    }
+    .choose {
+        display: flex;
+    }
+    button {
+        @include button;
+        width: 200px;
+        margin: 25px;
+    }
 }
+
 
 /********** Create & Edit Profile Popup **********/
 
 .create-edit-popup {
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: $dark_blue;
-  padding: 25px;
-  border: solid 5px $white;
-  border-radius: 20px;
-
-  form {
+    width: 60%;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    .input-row {
-      display: flex;
-      justify-content: center;
-      input {
-        @include input;
-        width: 350px;
-        margin: 25px 50px;
-      }
-
-      select {
-        width: 350px;
-        height: 50px;
-        margin: 25px 50px;
-        border: 2px solid $white;
-        border-radius: 10px;
-        outline: none;
-        padding: 0 5px;
-        transition: 0.3s ease-in-out;
-
-        &:focus {
-          border: 2px solid $green;
+    align-items: center;
+    background-color: $dark_blue;
+    padding: 25px;
+    border: solid 5px $white;
+    border-radius: 20px;
+    form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        .input-row {
+            display: flex;
+            justify-content: center;
+            input {
+                @include input;
+                width: 350px;
+                margin: 25px 50px;
+            }
+            select {
+                width: 350px;
+                height: 50px;
+                margin: 25px 50px;
+                border: 2px solid $white;
+                border-radius: 10px;
+                outline: none;
+                padding: 0 5px;
+                transition: 0.3s ease-in-out;
+                &:focus {
+                    border: 2px solid $green;
+                }
+            }
+            img {
+                position: absolute;
+                height: 25px;
+                transform: translate(150px, 38px);
+                display: none;
+            }
         }
-      }
-      img {
-        position: absolute;
-        height: 25px;
-        transform: translate(150px, 38px);
-        display: none;
-      }
     }
-  }
-  button {
-    @include button;
-    padding: 0 60px;
-    margin: 25px;
-  }
+    button {
+        @include button;
+        padding: 0 60px;
+        margin: 25px;
+    }
 }
+
 
 /********** End of Create & Edit Profile Popup **********/
 
-/********** Save Modifications & Delete Popup **********/
-
-.modif-delete-popup {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: $dark_blue;
-  padding: 25px;
-  border: solid 5px $white;
-  border-radius: 20px;
-}
-
-/********** End of Save Modifications & Delete Popup **********/
 
 /********** End of Popups Styling Web **********/
+
 
 /********** Popups Styling Responsive **********/
 
 @media (max-width: 800px) {
-  .popup-bg {
-    .close {
-      font-size: 15px !important;
+    .popup-bg {
+        .close {
+            font-size: 15px !important;
+        }
+        img {
+            height: 40px !important;
+        }
+        p {
+            font-size: 20px !important;
+            margin-top: 10px !important;
+        }
+        button {
+            height: 40px !important;
+            width: 130px !important;
+            margin: 10px !important;
+        }
     }
-
-    img {
-      height: 40px !important;
+    /********** Create & Edit Profile Popup **********/
+    .create-edit-popup {
+        width: 90% !important;
+        padding: 20px !important;
+        .input-row {
+            width: 100%;
+            input {
+                width: 100% !important;
+                margin: 5px 10px !important;
+            }
+            select {
+                height: 40px !important;
+                width: 100% !important;
+                margin: 5px 10px !important;
+            }
+            img {
+                height: 25px !important;
+                transform: translate(105px, 13px) !important;
+                display: none;
+            }
+        }
+        button {
+            @include button;
+            padding: 0 10px !important;
+        }
     }
-
-    p {
-      font-size: 20px !important;
-      margin-top: 10px !important;
-    }
-
-    button {
-      height: 40px !important;
-      width: 130px !important;
-      margin: 10px !important;
-    }
-  }
-
-  /********** Create & Edit Profile Popup **********/
-
-  .create-edit-popup {
-    width: 90% !important;
-    padding: 20px !important;
-    .input-row {
-      width: 100%;
-      input {
-        width: 100% !important;
-        margin: 5px 10px !important;
-      }
-      select {
-        height: 40px !important;
-        width: 100% !important;
-        margin: 5px 10px !important;
-      }
-      img {
-        height: 25px !important;
-        transform: translate(105px, 13px) !important;
-        display: none;
-      }
-    }
-    button {
-      @include button;
-      padding: 0 10px !important;
-    }
-  }
-
-  /********** End of Create & Edit Profile Popup **********/
-  /********** Save Modifications & Delete Popup **********/
-
-  .modif-delete-popup {
-    width: 90% !important;
-    padding: 20px !important;
-  }
+    /********** End of Create & Edit Profile Popup **********/
 }
 
+
 /********** End of Save Modifications & Delete Popup **********/
+
 
 /********** End of Popups Styling Responsive **********/

@@ -125,6 +125,133 @@ function englishValidation() {
     }
 }
 
+// Student Profile Modification Form REGEX
+
+function emailValidationEdit() {
+    const email = document.getElementById('std-email-edit');
+    const regExpression = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    if (!regExpression.test(email.value)) {
+        document.querySelector("#email-invalid-edit").style.display = "block";
+        document.querySelector("#email-valid-edit").style.display = "none";
+        document.querySelector("#std-email-edit").style.border = "solid 3px #cf2716";
+    } else {
+        document.querySelector("#email-invalid-edit").style.display = "none";
+        document.querySelector("#email-valid-edit").style.display = "block";
+        document.querySelector("#std-email-edit").style.border = "solid 3px #3db166";
+    }
+}
+
+
+function passwordValidationEdit() {
+    const password = document.getElementById('std-password-edit');
+    const regExpression = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$/;
+    if (!regExpression.test(password.value)) {
+        document.querySelector("#password-invalid-edit").style.display = "block";
+        document.querySelector("#password-valid-edit").style.display = "none";
+        document.querySelector("#std-password-edit").style.border = "solid 3px #cf2716";
+    } else {
+        document.querySelector("#password-invalid-edit").style.display = "none";
+        document.querySelector("#password-valid-edit").style.display = "block";
+        document.querySelector("#std-password-edit").style.border = "solid 3px #3db166";
+    }
+}
+
+function nameValidationEdit() {
+    const name = document.getElementById('std-name-edit');
+    const regExpression = /^[a-zA-Z]{3,15}\s{1}[a-zA-Z]{3,15}(\s{1}[a-zA-Z]{3,15})?$/;
+    if (!regExpression.test(name.value)) {
+        document.querySelector("#name-invalid-edit").style.display = "block";
+        document.querySelector("#name-valid-edit").style.display = "none";
+        document.querySelector("#std-name-edit").style.border = "solid 3px #cf2716";
+    } else {
+        document.querySelector("#name-invalid-edit").style.display = "none";
+        document.querySelector("#name-valid-edit").style.display = "block";
+        document.querySelector("#std-name-edit").style.border = "solid 3px #3db166";
+    }
+}
+
+function genderValidationEdit() {
+    if (document.querySelector("#std-gender-edit").selected = true) {
+        document.querySelector("#std-gender-edit").style.border = "solid 3px #3db166";
+    }
+}
+
+function ageValidationEdit() {
+    const age = document.getElementById('std-age-edit');
+    const regExpression = /^(1[0-9]|20)$/;
+    if (!regExpression.test(age.value)) {
+        document.querySelector("#age-invalid-edit").style.display = "block";
+        document.querySelector("#age-valid-edit").style.display = "none";
+        document.querySelector("#std-age-edit").style.border = "solid 3px #cf2716";
+    } else {
+        document.querySelector("#age-invalid-edit").style.display = "none";
+        document.querySelector("#age-valid-edit").style.display = "block";
+        document.querySelector("#std-age-edit").style.border = "solid 3px #3db166";
+    }
+}
+
+function adressValidationEdit() {
+    const homeadress = document.getElementById('std-adress-edit');
+    const regExpression = /^[a-z0-9\s,'-]{5,100}$/i;
+    if (!regExpression.test(homeadress.value)) {
+        document.querySelector("#adress-invalid-edit").style.display = "block";
+        document.querySelector("#adress-valid-edit").style.display = "none";
+        document.querySelector("#std-adress-edit").style.border = "solid 3px #cf2716";
+    } else {
+        document.querySelector("#adress-invalid-edit").style.display = "none";
+        document.querySelector("#adress-valid-edit").style.display = "block";
+        document.querySelector("#std-adress-edit").style.border = "solid 3px #3db166";
+    }
+}
+
+function phoneValidationEdit() {
+    const phone = document.getElementById('std-phone-edit');
+    const regExpression = /^[1][0-9]{10}$/;
+    if (!regExpression.test(phone.value)) {
+        document.querySelector("#phone-invalid-edit").style.display = "block";
+        document.querySelector("#phone-valid-edit").style.display = "none";
+        document.querySelector("#std-phone-edit").style.border = "solid 3px #cf2716";
+    } else {
+        document.querySelector("#phone-invalid-edit").style.display = "none";
+        document.querySelector("#phone-valid-edit").style.display = "block";
+        document.querySelector("#std-phone-edit").style.border = "solid 3px #3db166";
+    }
+}
+
+function classValidationEdit() {
+    if (document.querySelector("#std-class-edit").selected = true) {
+        document.querySelector("#std-class-edit").style.border = "solid 3px #3db166";
+    }
+}
+
+function mathValidationEdit() {
+    const mathNote = document.getElementById('math-mark-edit');
+    const regExpression = /^([0-9]|1[0-9]|20)$/;
+    if (!regExpression.test(mathNote.value)) {
+        document.querySelector("#math-invalid-edit").style.display = "block";
+        document.querySelector("#math-valid-edit").style.display = "none";
+        document.querySelector("#math-mark-edit").style.border = "solid 3px #cf2716";
+    } else {
+        document.querySelector("#math-invalid-edit").style.display = "none";
+        document.querySelector("#math-valid-edit").style.display = "block";
+        document.querySelector("#math-mark-edit").style.border = "solid 3px #3db166";
+    }
+}
+
+function englishValidationEdit() {
+    const englishNote = document.getElementById('english-mark-edit');
+    const regExpression = /^([0-9]|1[0-9]|20)$/;
+    if (!regExpression.test(englishNote.value)) {
+        document.querySelector("#english-invalid-edit").style.display = "block";
+        document.querySelector("#english-valid-edit").style.display = "none";
+        document.querySelector("#english-mark-edit").style.border = "solid 3px #cf2716";
+    } else {
+        document.querySelector("#english-invalid-edit").style.display = "none";
+        document.querySelector("#english-valid-edit").style.display = "block";
+        document.querySelector("#english-mark-edit").style.border = "solid 3px #3db166";
+    }
+}
+
 // Contact Form REGEX
 
 function nameContactValidation() {
